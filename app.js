@@ -68,6 +68,9 @@ app.put('/post-image', (req, res, next) => {
 })
 
 
+app.get('/',(req, res, next)=>{
+  res.json({message:'I Am Alive'})
+})
 
 app.use('/graphql', graphqlHTTP({
   schema: graphqlSchema,
@@ -83,6 +86,7 @@ app.use('/graphql', graphqlHTTP({
     return { message: message, code: code, data: data }
   }
 }))
+
 
 app.use((error, req, res, next) => {
   console.log(error)
